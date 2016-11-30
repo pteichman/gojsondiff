@@ -33,16 +33,6 @@ var _ = Describe("Gojsondiff", func() {
 				})
 			})
 
-			Context("Runs to completion", func() {
-				It("Detects nothing", func() {
-					a = LoadFixture("FIXTURES/a.json")
-					b = LoadFixture("FIXTURES/b.json")
-
-					diff := differ.CompareObjects(a, b)
-					Expect(diff.Modified()).To(BeFalse())
-				})
-			})
-
 			Context("There are some values modified", func() {
 				It("Detects changes", func() {
 					a = LoadFixture("FIXTURES/base.json")
